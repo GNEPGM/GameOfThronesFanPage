@@ -1,0 +1,21 @@
+<div fxFlex="65" style="align-self: center;" [@fadeInOnEnter]>
+    <canvas baseChart
+    [data]="barChartData"
+    [labels]="barChartLabels"
+    [chartType]="barChartType"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [colors]="barChartColors"
+    [legend]="barChartLegend">
+    </canvas>
+</div>
+<div fxFlex="35">
+    <mat-form-field class="search" fxLayoutAlign="end center">
+        <input matInput placeholder="Search house" [(ngModel)]="searchInput" (keyup)="onSearch()">
+    </mat-form-field>
+    <div class="search-box" (scroll)="onItemScroll($event)" #scrolldiv>
+        <div *ngFor="let house of housesForStats" style="margin: 5px;">
+            <mat-checkbox [(ngModel)]="house.checked" (change)="houseChecked($event, house)">{{house.name}}</mat-checkbox>
+        </div>
+    </div>
+</div>

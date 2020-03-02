@@ -1,0 +1,133 @@
+<div style="height: 100%;" fxLayout="column" [@fadeInOnEnter]>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="dialog-header">
+        <span class="dialog-header-text">Character Details</span>
+        <button mat-icon-button [mat-dialog-close]>
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxFlex fxLayout="column" class="dialog-body" *ngIf="character">
+        <h3 style="text-align: center;" *ngIf="character.name">{{character.name}}</h3>
+        <h3 style="text-align: center;" *ngIf="!character.name">Unknown name</h3>
+        <div fxLayout="row">
+            <div fxFlex="27" style="padding-left: 2%">
+                <img [src]="url" class="character-img">
+                <app-loader></app-loader>
+            </div>
+            <div fxFlex="71" fxLayout="column" style="padding-left: 4%">
+                <div fxFlex class="details-wrapper">
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Gender: </span>
+                        </div>
+                        <div class="details">
+                            <span> {{ character.gender }}</span>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Culture: </span>
+                        </div>
+                        <div class="details">
+                            <span> {{ character.culture }}</span>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Born: </span>
+                        </div>
+                        <div class="details">
+                            <span> {{ character.born }}</span>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Died: </span>
+                        </div>
+                        <div class="details">
+                            <span> {{ character.died }}</span>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Titles: </span>
+                        </div>
+                        <div class="details">
+                            <p class="no-margin" *ngFor="let title of character.titles"> {{ title }}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Aliases: </span>
+                        </div>
+                        <div class="details">
+                            <p class="no-margin" *ngFor="let alias of character.aliases"> {{ alias }}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Father: </span>
+                        </div>
+                        <div class="details">
+                            <span> {{ character.father }}</span>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Mother: </span>
+                        </div>
+                        <div class="details">
+                            <span> {{ character.mother }}</span>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Spouse: </span>
+                        </div>
+                        <div class="details">
+                            <span> {{ character.spouse }}</span>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Books: </span>
+                        </div>
+                        <div class="details">
+                            <p class="no-margin" *ngFor="let book of character.books"> {{ book }}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>POV Books: </span>
+                        </div>
+                        <div class="details">
+                            <p class="no-margin" *ngFor="let povBook of character.povBooks"> {{ povBook }}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>TV Series: </span>
+                        </div>
+                        <div class="details">
+                            <p class="no-margin" *ngFor="let tv of character.tvSeries"> {{ tv }}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="details" fxFlex="20">
+                            <span>Played By: </span>
+                        </div>
+                        <div class="details">
+                            <p class="no-margin" *ngFor="let played of character.playedBy"> {{ played }}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

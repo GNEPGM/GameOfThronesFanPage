@@ -1,0 +1,13 @@
+<div class="height-max" fxLayout="row" fxLayoutAlign="center center" [@fadeInOnEnter]>
+    <div style="align-self: center;" fxFlex="85" >
+        <canvas baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [plugins]="pieChartPlugins"
+        [colors]="pieChartColors"
+        [legend]="pieChartLegend">
+        </canvas>
+    </div>
+</div>

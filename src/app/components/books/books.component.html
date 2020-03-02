@@ -1,0 +1,24 @@
+<div class="height-max" class="bookpage" [@fadeInOnEnter]>
+    <mat-card class="book-card" *ngFor="let book of booksArray">
+        <mat-card-header>
+            <mat-card-title>{{book.name}}</mat-card-title>
+            <mat-card-subtitle>
+                {{book.authors[0]}}
+                <mat-icon *ngIf="book.authors.length > 1" class="more-author-icon" [matTooltip]="book.authors">people</mat-icon>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image *ngIf="book.cover" [src]="book.cover" class="book-cover">
+        <app-loader></app-loader>
+        <mat-card-content class="content-text">
+            <p>
+                Release date: {{ book.released }}
+            </p>
+            <p>
+                Number of pages: {{ book.numberOfPages }}
+              </p>
+              <p>
+                ISBN: {{ book.isbn }}
+              </p>
+        </mat-card-content>
+    </mat-card>
+</div>

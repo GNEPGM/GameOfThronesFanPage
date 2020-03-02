@@ -1,0 +1,23 @@
+<div class="height-max" [@fadeInOnEnter]>
+    <mat-form-field fxLayoutAlign="end center" style="margin-right: 25px;">
+        <input matInput placeholder="Search" [(ngModel)]="searchInput" (keyup)="onSearch()">
+    </mat-form-field>
+    <div class="character-list" (scroll)="onItemScroll($event)" #scrolldiv>
+        <!-- <div *ngFor="let character of characters" (click)="selectCharacter(character)"
+        >{{character.name}} - {{character.aliases}}</div> -->
+        <mat-card class="book-card" *ngFor="let character of characters" class="character-card"
+        (click)="selectCharacter(character)">
+            <mat-card-header style="text-align: left;">
+                <mat-card-title *ngIf="character.name">{{character.name}}</mat-card-title>
+                <mat-card-title *ngIf="!character.name">Unknown name</mat-card-title>
+                <mat-card-subtitle *ngIf="character.aliases" class="character-text-of">
+                    {{character.aliases}}
+                </mat-card-subtitle>
+                <mat-card-subtitle *ngIf="character.aliases[0] === ''" class="character-text-of">
+                No available alias
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+    
+</div>

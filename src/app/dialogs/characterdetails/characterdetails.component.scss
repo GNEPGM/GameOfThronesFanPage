@@ -1,0 +1,35 @@
+.dialog-header {
+    padding: 5px;
+}
+
+.dialog-header-text {
+    font-size: large;
+    margin-left: 10px;
+}
+
+.dialog-body {
+    padding: 5px;
+}
+
+.details {
+    margin: 10px;
+    font-size: 11px;
+}
+
+.details-wrapper {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.no-margin {
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.character-img {
+    width: 200px;
+    height: 300px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}

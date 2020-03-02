@@ -1,0 +1,27 @@
+.book-card {
+    width: 250px;
+    display: inline-block;
+    margin: 15px;
+    max-height: 460px;
+}
+
+.bookpage {
+    text-align: center;
+    overflow: auto;
+}
+
+.content-text {
+    font-size: 13px;
+}
+
+.book-cover {
+    height: 300px;
+    width: 200px;
+}
+
+.more-author-icon {
+    position: relative;
+    top: 4px;
+    height: 10px;
+    font-size: 15px;
+}

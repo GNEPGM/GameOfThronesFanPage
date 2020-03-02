@@ -1,0 +1,211 @@
+<div class="height-max" fxLayout="row">
+    <img src="../../../assets/images/map.png" class="map">
+    <div class="height-max hover-div">
+        <div style="width: 95%;
+        left: 2%;
+        height: 4%;
+        position: absolute;" (mouseenter)="mouseHover('Beyond the Wall')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 95%;
+        left: 2%;
+        top: 4%;
+        height: 29%;
+        position: absolute;" (mouseenter)="mouseHover('The North')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 27%;
+        left: 2%;
+        top: 33%;
+        height: 7%;
+        position: absolute;" (mouseenter)="mouseHover('The North')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 20%;
+        left: 30%;
+        top: 33%;
+        height: 7%;
+        position: absolute;" (mouseenter)="mouseHover('The Neck')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 35%;
+        left: 61%;
+        height: 16%;
+        top: 40%;
+        position: absolute;" (mouseenter)="mouseHover('The Vale')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 25%;
+        left: 35%;
+        height: 26%;
+        top: 40%;
+        position: absolute;" (mouseenter)="mouseHover('The Riverlands')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 28%;
+        left: 6%;
+        height: 18%;
+        top: 53%;
+        position: absolute;" (mouseenter)="mouseHover('The Westerlands')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 23%;
+        left: 1%;
+        height: 9%;
+        top: 44%;
+        position: absolute;" (mouseenter)="mouseHover('Iron Islands')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 52%;
+        left: 6%;
+        height: 9%;
+        top: 71%;
+        position: absolute;" (mouseenter)="mouseHover('The Reach')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 29%;
+        left: 4%;
+        height: 19%;
+        top: 80%;
+        position: absolute;" (mouseenter)="mouseHover('The Reach')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 25%;
+        left: 35%;
+        height: 5%;
+        top: 66%;
+        position: absolute;" (mouseenter)="mouseHover('The Reach')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 10%;
+        left: 25%;
+        height: 13%;
+        top: 40%;
+        position: absolute;" (mouseenter)="mouseHover('The Riverlands')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 37%;
+        left: 61%;
+        height: 14%;
+        top: 56%;
+        position: absolute;" (mouseenter)="mouseHover('The Crownlands')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 61%;
+        left: 34%;
+        height: 15%;
+        top: 84%;
+        position: absolute;" (mouseenter)="mouseHover('Dorne')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 37%;
+        left: 59%;
+        height: 14%;
+        top: 70%;
+        position: absolute;" (mouseenter)="mouseHover('The Stormlands')" (mouseleave)="mouseHoverLeave()">
+        </div>
+
+        <div style="width: 25%;
+        left: 34%;
+        height: 4%;
+        top: 80%;
+        position: absolute;" (mouseenter)="mouseHover('The Stormlands')" (mouseleave)="mouseHoverLeave()">
+        </div>
+    </div>
+    <div fxFlex="69" [ngStyle]="{'background': 'linear-gradient(to right, #354b59 0%, white 1.5%)'}">
+        <div *ngIf="randomHouseInSelectedRegion" class="height-max" style="width: 100%;" fxLayout="column" [@fadeInOnEnter]>
+            <div fxFlex="30" fxLayoutAlign="center center" fxLayout="column">
+                <div class="house-deatils-box" fxLayoutAlign="center center" fxLayout="column">
+                    <img *ngIf="url" [src]="url" style="height: 150px;">
+                    <p style="text-align: center;">{{selectedRegion}}</p>
+                </div>
+            </div>
+            <div fxFlex="70" fxLayoutAlign="start center" fxLayout="column" class="details-block">
+                <p style="font-weight: bold;">{{randomHouseInSelectedRegion.name}}</p>
+                <div style="width: 95%;" class="house-deatils-box">
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Coat of arms:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.coatOfArms}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Words:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.words}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Titles:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p *ngFor="let title of randomHouseInSelectedRegion.titles">{{title}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Current Lord:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.currentLord}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Heir:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.heir}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Overlord:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.overlord}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Founded:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.founded}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Founder:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.founder}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Sworn Members:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.swornMembers.length}}</p>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="house-details">
+                        <div fxFlex="20">
+                            <p>Died Out:</p>
+                        </div>
+                        <div fxFlex="80">
+                            <p>{{randomHouseInSelectedRegion.diedOut}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

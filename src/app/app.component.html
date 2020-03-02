@@ -1,0 +1,33 @@
+<div fxLayout="column" style="height: 100%;">
+    <div fxLayout="row" class="header">
+        <img src="../assets/images/logo.png" style="width: 250px;
+        height: 30px; 
+        margin-left: 5px;
+        margin-right: 5px;">
+        <div routerLink="/home" class="nav-btn" style="z-index: 1001;" (mouseenter)="showMenu()"
+            (mouseleave)="hideMenu()" [matMenuTriggerFor]="menu">
+            <p><mat-icon class="nav-icon">home</mat-icon>Home</p>
+        </div>
+        <div routerLink="/books" class="nav-btn">
+            <p><mat-icon class="nav-icon">menu_book</mat-icon> Books</p>
+        </div>
+        <div routerLink="/characters" class="nav-btn">
+            <p><mat-icon class="nav-icon">group</mat-icon> Characters</p>
+        </div>
+    </div>
+    <mat-progress-bar *ngIf="isLoading" mode="indeterminate" class="progress"></mat-progress-bar>
+    <div fxFlex>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<mat-menu #menu="matMenu">
+    <button (mouseover)="showMenu()" (mouseleave)="hideMenu()" routerLink="/home" mat-menu-item><mat-icon>map</mat-icon> Map</button>
+    <button (mouseover)="showMenu()" (mouseleave)="hideMenu()" [matMenuTriggerFor]="subMenu" mat-menu-item><mat-icon>poll</mat-icon> Statistics</button>
+</mat-menu>
+
+<mat-menu #subMenu="matMenu">
+    <button (mouseover)="showMenu()" (mouseleave)="hideMenu()" routerLink="/home/statdist" mat-menu-item><mat-icon>show_chart</mat-icon> Character distribution</button>
+    <button (mouseover)="showMenu()" (mouseleave)="hideMenu()" routerLink="/home/statchar" mat-menu-item><mat-icon>pie_chart</mat-icon> Number of characters</button>
+    <button (mouseover)="showMenu()" (mouseleave)="hideMenu()" routerLink="/home/statdead" mat-menu-item><mat-icon>multiline_chart</mat-icon> Dead/alive characters</button>
+</mat-menu>

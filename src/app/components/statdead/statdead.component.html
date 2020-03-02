@@ -1,0 +1,20 @@
+<div class="height-max" fxLayout="row" fxLayoutAlign="center center" [@fadeInOnEnter]>
+    <div fxFlex="85" class="statdead">
+        <mat-form-field fxLayoutAlign="end center">
+            <mat-label>Statistics by</mat-label>
+            <mat-select [value]="selectedOption" (selectionChange)="selection($event)">
+                <mat-option [value]="'books'">
+                    Books
+                </mat-option>
+                <mat-option [value]="'regions'">
+                    Regions
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" *ngIf="!isLoading"
+            [chartType]="lineChartType" [options]="lineChartOptions" [plugins]="lineChartPlugins"
+            [colors]="lineChartColors" [legend]="lineChartLegend">
+        </canvas>
+        <mat-spinner class="spinner" *ngIf="isLoading"></mat-spinner>
+    </div>
+</div>
